@@ -1,0 +1,132 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    
+
+    <groupId>webchavesapp</groupId>
+    <artifactId>webchavesapp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <!-- Jakarta dependencies -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSTL dependency (for JSP taglibs) -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <!-- MySQL connector -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.32</version>
+        </dependency>
+
+       <dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.15.3</version>
+</dependency>
+   
+   
+
+
+   <dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>html2pdf</artifactId>
+    <version>4.0.3</version>
+</dependency>
+
+   
+
+      <dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.27</version>
+</dependency>
+
+
+
+<dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>itext7-core</artifactId>
+    <version>7.2.5</version> <!-- Certifique-se de usar a versão mais recente -->
+    <type>pom</type>
+</dependency>
+
+
+        <!-- OpenHTMLToPDF for HTML to PDF conversion -->
+        <dependency>
+            <groupId>com.openhtmltopdf</groupId>
+            <artifactId>openhtmltopdf-pdfbox</artifactId>
+            <version>1.0.7</version>
+        </dependency>
+        
+        
+        <dependency>
+    <groupId>org.mindrot</groupId>
+    <artifactId>jbcrypt</artifactId>
+    <version>0.4</version> <!-- ou a versão mais recente -->
+</dependency>
+
+
+
+        
+        <dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>html2pdf</artifactId>
+    <version>4.0.3</version>
+    <exclusions>
+        <exclusion>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>kernel</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>21</release> <!-- Adjust according to your JDK version -->
+                </configuration>
+            </plugin>
+
+            <!-- Maven WAR Plugin -->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" 
+         id="WebApp_ID" 
+         version="6.0">
+         
+
+
+  <display-name>webchavesapp</display-name>
+
+  <!-- Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>exibirProduto.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+
+  <!-- Servlet for handling JSP files -->
+  <servlet>
+    <servlet-name>jsp</servlet-name>
+    <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+    <init-param>
+      <param-name>modificationTestInterval</param-name>
+      <param-value>0</param-value>
+    </init-param>
+    <init-param>
+      <param-name>scratchdir</param-name>
+      <param-value>/tmp/jsp</param-value>
+    </init-param>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  
+  
+  
+
+
+
+  <!-- Servlet Mapping for JSP files -->
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.chaves.webap.LoginServlet</servlet-class>
+</servlet>
+  
+  <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>jsp</servlet-name>
+    <url-pattern>*.jsp</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet Definition for webapController -->
+  <servlet>
+    <servlet-name>webapController</servlet-name>
+    <servlet-class>com.chaves.webap.webapController</servlet-class>
+  </servlet>
+  
+  
+  
+  
+
+  
+  <!-- Servlet Mapping for webapController -->
+  <servlet-mapping>
+    <servlet-name>webapController</servlet-name>
+    <url-pattern>/getwebapController</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlet Definition for visualizarprodutos -->
+  <servlet>
+    <servlet-name>visualizarprodutos</servlet-name>
+    <servlet-class>com.chaves.webap.visualizarprodutos</servlet-class>
+  </servlet>
+  
+  <!-- Servlet Mapping for visualizarprodutos -->
+  <servlet-mapping>
+    <servlet-name>visualizarprodutos</servlet-name>
+    <url-pattern>/homeprodutos</url-pattern>
+  </servlet-mapping>
+
+ 
+ 
+ 
+ <servlet>
+    <servlet-name>EditarProdutoServlet</servlet-name>
+    <servlet-class>com.chaves.webap.EditarProdutoServlet</servlet-class>
+  </servlet>
+  
+  <!-- Servlet Mapping for visualizarprodutos -->
+  <servlet-mapping>
+    <servlet-name>EditarProdutoServlet</servlet-name>
+    <url-pattern>/editarProduto</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+   
+
+</web-app>
